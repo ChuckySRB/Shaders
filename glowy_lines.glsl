@@ -13,15 +13,15 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     vec2 uv0 = uv;
     vec3 finalColor = vec3(0.0);
     
-    for (float i = 0.0; i < 4.0; i++){
+    for (float i = 0.0; i < 3.0; i++){
     
-        uv = fract(uv * 1.34842) - 0.5;
+        uv = fract(uv * 2.14) - 0.5;
 
 
         float d = length(uv) * exp(-length(uv0));
         vec3 col = palette(length(uv0) + iTime/4. + i*.4, a, b,c, e);
 
-        d = tan(d*15.0 + iTime)/20.;
+        d = tan(d*15.0 + iTime)/20. ;
         d = abs(d);
 
         d=  0.01/d;
